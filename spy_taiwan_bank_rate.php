@@ -91,7 +91,7 @@ class taiwan_bank_rate
         // get table
         $content = $this->curl_post($this->url, $this->url_param);
         $start   = stripos($content, '<table title="歷史匯率"');
-        $end     = stripos(substr($content, $start), '</table>') + 8;
+        $end     = stripos(substr($content, $start), '</table>');
         $html    = substr($content, $start, $end);
         if ('' == $start
                 || '' == $end)
